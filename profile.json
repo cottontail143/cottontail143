@@ -1,0 +1,19 @@
+{
+  "github_user": "cottontail143",
+  "profile_image": "assets/profile.txt",
+  "birth_date": "2008-12-25",
+  "profile": {
+    "OS": "Windows 11",
+    "IDE": "Neovim, Pi, VS Code",
+    "Tools": "Figma, ProtoPie, Storybook",
+    "Learning": "WCAG, Docker, LLM Evals",
+    "Uptime": "",
+    "_": "",
+    "Languages.Real": "Bengali, English, Hindi",
+    "Languages.Programming": "Python, TypeScript, Rust",
+    "Hobbies": "Knitting, Gaming, Cooking"
+  },
+  "contact": {
+    "Email": "cottontail143@outlook.com"
+  }
+}

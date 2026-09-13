@@ -1,0 +1,31 @@
+name: Refresh profile card
+
+on:
+  push:
+    paths:
+      - profile.json
+      - scripts/generate_profile.py
+      - .github/workflows/render-profile.yml
+  schedule:
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - run: python scripts/generate_profile.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.PROFILE_PAT }}
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore: refresh profile card'
+          file_pattern: dark_mode.svg light_mode.svg

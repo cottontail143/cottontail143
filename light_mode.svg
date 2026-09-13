@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="500" viewBox="0 0 840 500" font-family="Consolas, Menlo, monospace" font-size="13px" role="img" aria-labelledby="title description">
+<title id="title">cottontail143 GitHub profile</title>
+<desc id="description">A terminal-style profile with a configurable image rendered as ASCII art and live GitHub statistics.</desc>
+<rect x="0.5" y="0.5" width="839" height="499" rx="10" fill="#ffffff" stroke="#d0d7de"/>
+<text x="25" y="40" fill="#57606a" xml:space="preserve">                                             </text>
+<text x="25" y="55" fill="#57606a" xml:space="preserve">                ;+++++x+++;                  </text>
+<text x="25" y="70" fill="#57606a" xml:space="preserve">             x++;..:;:..:;;:;                </text>
+<text x="25" y="85" fill="#57606a" xml:space="preserve">            ;+.            . .:              </text>
+<text x="25" y="100" fill="#57606a" xml:space="preserve">          .;:. ;X$: .   .                    </text>
+<text x="25" y="115" fill="#57606a" xml:space="preserve">          :.  ;$$$X..+         .             </text>
+<text x="25" y="130" fill="#57606a" xml:space="preserve">          .  :+X$$$$:..   .    :             </text>
+<text x="25" y="145" fill="#57606a" xml:space="preserve">          :  ;.+$$&amp;$++;. .;    .             </text>
+<text x="25" y="160" fill="#57606a" xml:space="preserve">             X$$&amp;$&amp;$:X$:.:xXX+  :            </text>
+<text x="25" y="175" fill="#57606a" xml:space="preserve">           . x$$$$$$$$$$::$$X.  .:           </text>
+<text x="25" y="190" fill="#57606a" xml:space="preserve">          :  .$$$$$$$$$$+:.X     .           </text>
+<text x="25" y="205" fill="#57606a" xml:space="preserve">         :.   :$XxX$$$$$X.       .:          </text>
+<text x="25" y="220" fill="#57606a" xml:space="preserve">          .     x$$$$XXXx         :          </text>
+<text x="25" y="235" fill="#57606a" xml:space="preserve">         .        xXXXX$x.       ..          </text>
+<text x="25" y="250" fill="#57606a" xml:space="preserve">         .        .x$$$Xx+.       :          </text>
+<text x="25" y="265" fill="#57606a" xml:space="preserve">       &amp;&amp;&amp;&amp;+       ;$$$XXX+.     .:&amp;&amp;        </text>
+<text x="25" y="280" fill="#57606a" xml:space="preserve">     &amp;&amp;&amp;&amp;&amp;&amp;$;      :$&amp;$$X$X+:      :;+       </text>
+<text x="25" y="295" fill="#57606a" xml:space="preserve">    &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;$;     ;$$XXX$$&amp;$$$x    .:       </text>
+<text x="25" y="310" fill="#57606a" xml:space="preserve">   &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;$.    .$&amp;$$X$&amp;$$$$&amp;X.   +&amp;      </text>
+<text x="25" y="325" fill="#57606a" xml:space="preserve">   &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;X    .X$&amp;$XX$&amp;$&amp;$$&amp;x   .x&amp;     </text>
+<text x="25" y="340" fill="#57606a" xml:space="preserve">  &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;$.   .$&amp;&amp;&amp;&amp;&amp;&amp;$$&amp;$&amp;&amp;X   :$&amp;    </text>
+<text x="25" y="355" fill="#57606a" xml:space="preserve"> &amp;&amp;&amp;&amp;&amp;$&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;$;    .+$&amp;&amp;&amp;&amp;&amp;$&amp;&amp;&amp;&amp;&amp;X.  ;&amp;&amp;   </text>
+<text x="25" y="370" fill="#57606a" xml:space="preserve"> &amp;&amp;&amp;&amp;&amp;&amp;$&amp;&amp;&amp;&amp;$&amp;&amp;$$:    XXxX&amp;&amp;&amp;$&amp;&amp;&amp;&amp;&amp;&amp;X  :$&amp;   </text>
+<text x="25" y="385" fill="#57606a" xml:space="preserve"> &amp;&amp;&amp;$&amp;$$$&amp;&amp;&amp;$&amp;&amp;$$.   :$&amp;&amp;&amp;$$&amp;&amp;$&amp;&amp;&amp;$&amp;&amp;;  .&amp;&amp;  </text>
+<text x="25" y="400" fill="#57606a" xml:space="preserve">  &amp;&amp;$$&amp;$$$&amp;&amp;&amp;$&amp;&amp;x   ;;X&amp;&amp;&amp;$$$&amp;$&amp;&amp;$$&amp;&amp;$:.x&amp;&amp;  </text>
+<text x="25" y="415" fill="#57606a" xml:space="preserve"> &amp;&amp;$$$&amp;&amp;$$&amp;&amp;&amp;$$&amp;$. .X+&amp;&amp;&amp;&amp;&amp;&amp;$&amp;&amp;$$X&amp;$&amp;&amp;;+$&amp;&amp;&amp; </text>
+<text x="25" y="430" fill="#57606a" xml:space="preserve">  &amp;&amp;$$$$&amp;$$&amp;&amp;&amp;$$&amp;$x. :X&amp;&amp;&amp;&amp;&amp;$&amp;&amp;$$X$$&amp;&amp;$$$&amp;&amp;&amp; </text>
+<text x="390" y="45" xml:space="preserve"><tspan fill="#0969da">cottontail143@github </tspan><tspan fill="#afb8c1">───────────────────────────────────</tspan></text>
+<text x="390" y="87" xml:space="preserve"><tspan fill="#953800">OS: </tspan><tspan fill="#afb8c1">......................................... </tspan><tspan fill="#24292f">Windows 11</tspan></text>
+<text x="390" y="108" xml:space="preserve"><tspan fill="#953800">IDE: </tspan><tspan fill="#afb8c1">............................... </tspan><tspan fill="#24292f">Neovim, Pi, VS Code</tspan></text>
+<text x="390" y="129" xml:space="preserve"><tspan fill="#953800">Tools: </tspan><tspan fill="#afb8c1">...................... </tspan><tspan fill="#24292f">Figma, ProtoPie, Storybook</tspan></text>
+<text x="390" y="150" xml:space="preserve"><tspan fill="#953800">Learning: </tspan><tspan fill="#afb8c1">...................... </tspan><tspan fill="#24292f">WCAG, Docker, LLM Evals</tspan></text>
+<text x="390" y="171" xml:space="preserve"><tspan fill="#953800">Uptime: </tspan><tspan fill="#afb8c1">.................... </tspan><tspan fill="#24292f">17 years, 8 months, 20 days</tspan></text>
+<text x="390" y="213" xml:space="preserve"><tspan fill="#953800">Languages.Real: </tspan><tspan fill="#afb8c1">................ </tspan><tspan fill="#24292f">Bengali, English, Hindi</tspan></text>
+<text x="390" y="234" xml:space="preserve"><tspan fill="#953800">Languages.Programming: </tspan><tspan fill="#afb8c1">........ </tspan><tspan fill="#24292f">Python, TypeScript, Rust</tspan></text>
+<text x="390" y="255" xml:space="preserve"><tspan fill="#953800">Hobbies: </tspan><tspan fill="#afb8c1">..................... </tspan><tspan fill="#24292f">Knitting, Gaming, Cooking</tspan></text>
+<text x="390" y="297" xml:space="preserve"><tspan fill="#0969da">─ Contact </tspan><tspan fill="#afb8c1">──────────────────────────────────────────────</tspan></text>
+<text x="390" y="318" xml:space="preserve"><tspan fill="#953800">Email: </tspan><tspan fill="#afb8c1">....................... </tspan><tspan fill="#24292f">cottontail143@outlook.com</tspan></text>
+<text x="390" y="360" xml:space="preserve"><tspan fill="#0969da">─ GitHub Stats </tspan><tspan fill="#afb8c1">─────────────────────────────────────────</tspan></text>
+<text x="390" y="381" xml:space="preserve"><tspan fill="#953800">Repos: </tspan><tspan fill="#afb8c1">.............................................. </tspan><tspan fill="#24292f">42</tspan></text>
+<text x="390" y="402" xml:space="preserve"><tspan fill="#953800">Commits: </tspan><tspan fill="#afb8c1">......................................... </tspan><tspan fill="#24292f">1,337</tspan></text>
+<text x="390" y="423" xml:space="preserve"><tspan fill="#953800">Lines of Code: </tspan><tspan fill="#afb8c1">............. </tspan><tspan fill="#24292f">50,000</tspan><tspan fill="#afb8c1"> (</tspan><tspan fill="#1a7f37">30,000++</tspan><tspan fill="#afb8c1">, </tspan><tspan fill="#cf222e">20,000--</tspan><tspan fill="#afb8c1">)</tspan></text>
+</svg>
