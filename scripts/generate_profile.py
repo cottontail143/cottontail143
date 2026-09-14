@@ -8,6 +8,7 @@ import json
 import os
 import sys
 import urllib.request
+import subprocess
 from datetime import date, datetime, timezone
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
@@ -41,6 +42,11 @@ LOC_QUERY = """query($owner: String!, $name: String!, $id: ID!, $cursor: String)
 
 def gh(url: str, payload: dict | None = None) -> dict:
     token = os.environ.get("GITHUB_TOKEN", "")
+    if not token:
+        try:
+            token = subprocess.check_output(["gh", "auth", "token"], text=True, stderr=subprocess.DEVNULL).strip()
+        except Exception:
+            pass
     req = urllib.request.Request(
         url,
         data=json.dumps(payload).encode() if payload else None,
@@ -48,7 +54,6 @@ def gh(url: str, payload: dict | None = None) -> dict:
     )
     with urllib.request.urlopen(req, timeout=30) as resp:
         return json.loads(resp.read() or "{}")
-
 
 def graphql(query: str, variables: dict | None = None) -> dict:
     res = gh("https://api.github.com/graphql", {"query": query, "variables": variables or {}})
@@ -89,7 +94,13 @@ def fetch_stats(user: str) -> dict[str, int]:
                 id
                 repositories(first: 100, ownerAffiliations: OWNER) {{
                   totalCount
-                  nodes {{ name isFork }}
+                  nodes {{ name isFork isPrivate }}
+                }}
+                publicRepos: repositories(ownerAffiliations: OWNER, privacy: PUBLIC) {{
+                  totalCount
+                }}
+                privateRepos: repositories(ownerAffiliations: OWNER, privacy: PRIVATE) {{
+                  totalCount
                 }}
                 {contrib_fields}
               }}
@@ -99,8 +110,16 @@ def fetch_stats(user: str) -> dict[str, int]:
 
         adds, dels = line_changes(user, u["id"], [r["name"] for r in u["repositories"]["nodes"] if not r["isFork"]])
         commits = sum(v["totalCommitContributions"] + v["restrictedContributionsCount"] for k, v in u.items() if k.startswith("y"))
+        public_count = u.get("publicRepos", {}).get("totalCount")
+        if public_count is None:
+            public_count = sum(1 for r in u["repositories"]["nodes"] if not r.get("isPrivate", False))
+        private_count = u.get("privateRepos", {}).get("totalCount")
+        if private_count is None:
+            private_count = sum(1 for r in u["repositories"]["nodes"] if r.get("isPrivate", False))
         return {
             "repos": u["repositories"]["totalCount"],
+            "public_repos": public_count,
+            "private_repos": private_count,
             "commits": commits,
             "loc": adds - dels,
             "additions": adds,
@@ -108,7 +127,17 @@ def fetch_stats(user: str) -> dict[str, int]:
         }
     except Exception as err:
         print(f"Could not refresh detailed GitHub stats: {err}")
-        return {"repos": int(profile.get("public_repos", 0)), "commits": 0, "loc": 0, "additions": 0, "deletions": 0}
+        pub = int(profile.get("public_repos", 0))
+        priv = int(profile.get("total_private_repos", 0))
+        return {
+            "repos": pub + priv,
+            "public_repos": pub,
+            "private_repos": priv,
+            "commits": 0,
+            "loc": 0,
+            "additions": 0,
+            "deletions": 0,
+        }
 
 
 # Formatting & SVG Rendering
@@ -137,6 +166,21 @@ def kv(key: str, val: object, width: int = INFO_WIDTH) -> list[tuple[str, str]]:
 def rule(title: str = "") -> list[tuple[str, str]]:
     label = f"─ {title} " if title else ""
     return [(label, "h"), ("─" * (INFO_WIDTH - len(label)), "d")]
+
+
+def repos_line(s: dict[str, int]) -> list[tuple[str, str]]:
+    total = s["repos"]
+    pub = s.get("public_repos", total)
+    priv = s.get("private_repos", 0)
+    if priv > 0:
+        detail = f"{pub} (+{priv} Private)"
+        dots = "." * max(INFO_WIDTH - len("Repos") - len(detail) - 3, 1)
+        return [
+            ("Repos: ", "k"), (dots + " ", "d"),
+            (str(pub), "v"), (" (", "d"),
+            (f"+{priv} Private", "v"), (")", "d"),
+        ]
+    return kv("Repos", total)
 
 
 def loc_line(s: dict[str, int]) -> list[tuple[str, str]]:
@@ -172,7 +216,7 @@ def visible_lines(config: dict, stats: dict[str, int]) -> list[list[tuple[str, s
     lines += [
         [],
         rule("GitHub Stats"),
-        kv("Repos", stats["repos"]),
+        repos_line(stats),
         kv("Commits", f"{stats['commits']:,}"),
         loc_line(stats),
     ]
@@ -207,7 +251,7 @@ def main() -> None:
     art_spec = config.get("profile_image", [])
     art = (ROOT / art_spec).read_text().splitlines() if isinstance(art_spec, str) else art_spec
     preview = "--preview" in sys.argv
-    stats = {"repos": 0, "commits": 0, "loc": 0, "additions": 0,"deletions": 0} if preview else fetch_stats(user)
+    stats = {"repos": 0, "public_repos": 0, "private_repos": 0, "commits": 0, "loc": 0, "additions": 0, "deletions": 0} if preview else fetch_stats(user)
     if not preview:
         print("stats:", stats)
     lines = visible_lines(config, stats)
